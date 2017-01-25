@@ -1,0 +1,64 @@
+<ons-page id="report">
+        
+    <ons-toolbar id="toolbar">
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">Monthly Report</div>
+      </ons-toolbar>
+      
+    <div class="content" style="text-align: center; margin-top: 10px;">
+    <div class="center">
+        <!--<label for="month">Select Month: </label>-->
+        <select id="month">
+        <option disabled selected value> -- Select a Month -- </option>
+          <option value="0">January</option>
+          <option value="1">February</option>
+          <option value="2">March</option>
+          <option value="3">April</option>
+          <option value="4">May</option>
+          <option value="5">June</option>
+          <option value="6">July</option>
+          <option value="7">August</option>
+          <option value="8">September</option>
+          <option value="9">October</option>
+          <option value="10">November</option>
+          <option value="11">December</option>
+        </select>
+    </div> 
+    
+    <div id="table_content"></div>
+    
+        
+    </div>
+    <script id="table_template" type="text/templete">
+        <table id="table" style="width:100%; margin-top: 10px;">
+        <caption id="cap">{{Month}} {{Type}} Report</caption>
+        <tr id="ha">
+        	<th>Date</th><th>Target</th><th>Ammount</th>
+    	</tr>
+    </script>
+    
+    
+    
+    <script id="row_template" type="text/templete">
+        <tr id="{{id}}">
+            <td>{{date}}</td><td>{{target}}</td><td>{{value}}</td>
+    	</tr>
+    </script>
+    
+    <ons-template id="actions">
+      <ons-dialog id="dialog_list" var="dialog" cancelable>
+        <ons-list>
+        <ons-list-item>
+            <div class="center"><b>What would you like to do?</b></div>
+        </ons-list-item>
+          <ons-list-item modifier="tappable"  onclick="edit();">
+            <div class="center">Edit</div>
+          </ons-list-item>
+          <ons-list-item modifier="tappable"  onclick="del()">
+            <div class="center">Delete</div>
+          </ons-list-item>
+        </ons-list>
+    
+      </ons-dialog>
+    </ons-template>
+</ons-page>
